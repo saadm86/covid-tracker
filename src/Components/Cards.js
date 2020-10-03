@@ -38,7 +38,7 @@ export default function CenteredGrid() {
       <Grid container spacing={3} justify="center">
       {Object.keys(data).map((key, id) => {
           return(
-            <Grid item sm={4} xs={3}  key={id}>
+            <Grid item sm={3} xs={6}  key={id}>
             <Paper className={classes.paper} elevation={3}>
                 <h3>{key.toUpperCase()}</h3>
                 <h2><CountUp end={data[key]} duration={2} separator=","/></h2>
