@@ -12,10 +12,14 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-      - name: Prepare for Yarn Installation
-        run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-      - name: install yarn
-        run: sudo apt update && sudo apt install yarn
+      - name: GitHub Action for Yarn
+  # You may pin to the exact commit or the version.
+  # uses: Borales/actions-yarn@4965e1a0f0ae9c422a9a5748ebd1fb5e097d22b9
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+    # Yarn command
+          cmd: install
+  
       - name: Build React App
         run: yarn build
       - name: Install Surge
