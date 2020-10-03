@@ -12,7 +12,7 @@ export const Api = async () => {
         critical: response.critical,
         deceased: response.deceased,
         active: active,
-        fatality_rate: fatalityRate
+        fatality_rate: fatalityRate,
     }
     return(
     modifiedData
