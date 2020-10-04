@@ -9,6 +9,23 @@ body{
 .heading{
     color: #FFFFFF;
     text-shadow: 0 0 10px #FFFFFF;
-    color: #FFFFFF;
-    
+    color: #FFFFFF; 
+}
+#infected{
+    background-color: #07DEB3;
+}
+#recovered{
+    background-color: #57DE4E;
+}
+#deceased{
+    background-color: #DE190B;
+}
+#critical{
+    background-color:#DE9A26;
+}
+#active{
+    background-color: bisque;
+}
+#fatality_rate{
+    background-color: bisque;
 }

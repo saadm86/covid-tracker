@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import {Api} from './Api'
 import CountUp from 'react-countup';
+import './../App.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#302C2D',
     backgroundColor: '#F1D9DF',
-    
-    
   },
 }));
 
@@ -37,12 +36,12 @@ export default function CenteredGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3} justify="center">
-      {Object.keys(data).map((key, id) => {
+      {Object.keys(data).map((key1, id) => {
           return(
             <Grid item sm={3} xs={6}  key={id}>
-            <Paper className={classes.paper} elevation={3}>
-                <h3>{key.toUpperCase()}</h3>
-                <h2><CountUp end={data[key]} duration={2} separator=","/></h2>
+            <Paper className={classes.paper} elevation={3} id={key1}>
+                <h3>{key1.toUpperCase()}</h3>
+                <h2><CountUp end={data[key1]} duration={2} separator=","/></h2>
             </Paper>
             </Grid>
           )
