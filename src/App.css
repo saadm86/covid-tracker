@@ -1,31 +1,37 @@
 
 body{
     text-align: center;
-    background-image: url(https://cdn.pixabay.com/photo/2020/03/18/16/25/coronavirus-4944680__480.jpg);
+    background-image: url(https://image.freepik.com/free-vector/blur-coronavirus-2019-ncov-white-background-medical-healthcare-microbiology-concept-design-covid-19-outbreaking_34926-393.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: .7;
+    background-color: #F2E6EE;
 }
 .heading{
-    color: #FFFFFF;
-    text-shadow: 0 0 10px #FFFFFF;
-    color: #FFFFFF; 
+    color: #40424A;
+    text-shadow: 0 0 10px #40424A;
 }
 #infected{
-    background-color: #07DEB3;
+    border-bottom: solid cadetblue;
+    border-width: .3cm;
 }
 #recovered{
-    background-color: #57DE4E;
+    border-bottom: solid #57DE4E;
+    border-width: .3cm;
 }
 #deceased{
-    background-color: #DE190B;
+    border-bottom: solid #DE190B;
+    border-width: .3cm;
 }
 #critical{
-    background-color:#DE9A26;
+    border-bottom: solid #DE9A26;
+    border-width: .3cm;
 }
 #active{
-    background-color: bisque;
+    border-bottom: solid bisque;
+    border-width: .3cm;
 }
 #fatality_rate{
-    background-color: bisque;
+    border-bottom: solid bisque;
+    border-width: .3cm;
 }
