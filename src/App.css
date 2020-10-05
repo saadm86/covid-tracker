@@ -1,8 +1,6 @@
 
 body{
     text-align: center;
-    width: 100vw;
-    height: 100vw;
     background-image: url(https://image.freepik.com/free-vector/blur-coronavirus-2019-ncov-white-background-medical-healthcare-microbiology-concept-design-covid-19-outbreaking_34926-393.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,24 +14,30 @@ body{
 #infected{
     border-bottom: solid cadetblue;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }
 #recovered{
     border-bottom: solid #57DE4E;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }
 #deceased{
     border-bottom: solid #DE190B;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }
 #critical{
     border-bottom: solid #DE9A26;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }
 #active{
     border-bottom: solid bisque;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }
 #fatality_rate{
     border-bottom: solid bisque;
     border-width: .3cm;
+    box-shadow: 6px 6px 5px gray;
 }

@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import {Api} from './Api'
 import CountUp from 'react-countup';
 import './../App.css'
+import NativeSelects from './Countrypicker'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,21 +21,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CenteredGrid() {
-
-    const [data, setData] = useState({})  
-    useEffect(() => {
-        const getData = async()=>{
-            const finalData = await(Api())
-            setData(finalData)
-        }
-        getData()
-    }, [])
         
   const classes = useStyles();
-
+  let finalFinalData = (data) => {
+    console.log(data)
+  }
+  finalFinalData()
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} justify="center">
+      {/* <Grid container spacing={3} justify="center">
       {Object.keys(data).map((key1, id) => {
           return(
             <Grid item sm={3} xs={6}  key={id}>
@@ -46,7 +40,8 @@ export default function CenteredGrid() {
             </Grid>
           )
           })}
-      </Grid>
+      </Grid> */}
+      <NativeSelects finalFinalData={finalFinalData}/>
     </div>
   );
 }

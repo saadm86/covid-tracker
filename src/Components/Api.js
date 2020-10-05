@@ -1,20 +1,17 @@
 
-
-const url = "https://api.apify.com/v2/key-value-stores/QhfG8Kj6tVYMgud6R/records/LATEST?disableRedirect=true"
+const url = "https://coronavirus-19-api.herokuapp.com/countries"
 export const Api = async () => {
-    const json = await(fetch(url))
-    const response = await json.json()
-    const active = response.infected-(response.recovered+response.deceased)
-    const fatalityRate = ((response.deceased/response.infected)*100)
-    const modifiedData = {
-        infected: response.infected,
-        recovered: response.recovered,
-        critical: response.critical,
-        deceased: response.deceased,
-        active: active,
-        fatality_rate: fatalityRate,
-    }
+    const response1 = await(fetch(url))
+    const finalResposne1 = await response1.json()
     return(
-    modifiedData
+    finalResposne1.map((country) => ({country: country.country, cases: country.cases})))}
+
+const url2 = "https://coronavirus-19-api.herokuapp.com/countries"
+
+export const Api2 = async () => {
+    const response = await(fetch(url2))
+    const finalResposne = await response.json()
+    return(
+    finalResposne.map(country=>country.country)
     )
 }

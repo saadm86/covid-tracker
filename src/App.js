@@ -1,12 +1,15 @@
-import React from 'react';
-import SimpleCard from './Components/Cards'
+import React from 'react'
+import CenteredGrid from './Components/Cards'
 import './App.css'
+import NativeSelects from './Components/Countrypicker'
 
 function App() {
+
   return (
     <div>
       <h1 className='heading'>COVID Tracker - Pakistan</h1>
-      <SimpleCard />
+      <CenteredGrid />
+      <NativeSelects />
     </div>
   );
 }
