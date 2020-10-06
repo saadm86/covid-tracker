@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         overflowWrap: "break-word",
         color: '#302C2D',
-        backgroundColor: '#E8E8E8'
+        
     },
   }));
 

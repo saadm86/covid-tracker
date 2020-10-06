@@ -5,8 +5,8 @@ body{
     background-image: url(https://cdn.pixabay.com/photo/2020/03/23/10/26/covid-19-4960254__480.png);
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: .9;
-    background-color: white;
+    opacity: 0.95;
+    
 }
 .heading{
     color: #40424A;
