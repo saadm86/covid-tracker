@@ -22,8 +22,9 @@ export const Countrypicker = ({countryCallBack}) => {
     let [country, setCountry] = useState([])
     useEffect(() => {
         const fetchedCountry = async()=>{
-            const countryName = await(globalApi())
-            setCountry(countryName.map(country=>country.country))
+            const country1 = await(globalApi())
+            const countryName = country1.map(country=>country.country)
+            setCountry(countryName.sort())
         }
         fetchedCountry()
     }, [])
