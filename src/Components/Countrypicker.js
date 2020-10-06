@@ -21,18 +21,18 @@ export const Countrypicker = ({countryCallBack}) => {
 
     let [country, setCountry] = useState([])
     useEffect(() => {
-        const fetchedData = async()=>{
-            const countryData = await(globalApi())
-            setCountry(countryData.map(country=>country.country))
+        const fetchedCountry = async()=>{
+            const countryName = await(globalApi())
+            setCountry(countryName.map(country=>country.country))
         }
-        fetchedData()
+        fetchedCountry()
     }, [])
     
     return (
         <div>
             <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="Country Selector">Country</InputLabel>
-                <NativeSelect onChange={( e => countryCallBack(e.target.value))}>
+                <InputLabel htmlFor="Country Selector">World</InputLabel>
+                <NativeSelect defaultValue = {"World"} onChange={( e => countryCallBack(e.target.value))}>
                 <option aria-label="None" value="" />
                 {country.map((key, id) => <option value={key} key={id}>{key}</option>)}
                 </NativeSelect>

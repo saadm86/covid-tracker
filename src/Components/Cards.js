@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
+        overflowWrap: "break-word",
         color: '#302C2D',
         backgroundColor: '#E8E8E8'
     },
@@ -30,33 +31,41 @@ export const Cards = () => {
     useEffect(() => {
         const getData = async() => {
         const getCountryData = await(globalApi())
-        const countryData = getCountryData.filter(key=>key.country===countryVal)
-        const [finalCountryData] = countryData
+        const [countryData] = getCountryData.filter(key=>key.country===countryVal)
+        const finalCountryData = {
+            cases:countryData.cases,
+            recovered:countryData.recovered,
+            deaths:countryData.deaths,
+            active:countryData.active,
+            today_Cases:countryData.todayCases,
+            today_Deaths:countryData.todayDeaths,
+            critical:countryData.critical,
+            cases_Per_One_Million:countryData.casesPerOneMillion,
+            deaths_Per_One_Million:countryData.deathsPerOneMillion,
+        }
         setGlobalCont(finalCountryData)
         }
         getData()
     },[countryVal])
-    console.log(Object.keys(globalCont))
+ 
     const countryCallBack = (country) =>{
         setCountryVal(country)
     }
     
     return (
         <div className={classes.root}>
+            <Grid container spacing={3} justify="space-evenly">
             {Object.keys(globalCont).map((val, i) => {
                 return (
-                <Grid container spacing={3}>
-                <Grid item sm={3} xs={6}>
-                <Paper className={classes.paper} key={i}>
-                    <h3>{val.toUpperCase()}</h3>
+                <Grid item sm={4} xs={6} key={i}>
+                <Paper className={classes.paper} >
+                    <h3>{val.replace(/_/g," ").toUpperCase()}</h3>
                     <h2><CountUp end={globalCont[val]} duration={2} separator=","/></h2>
                 </Paper>
-                
                 </Grid>
-            </Grid>
                 )
             })}
-            
+            </Grid>
             <Countrypicker countryCallBack={countryCallBack}/>
         </div>
     )
